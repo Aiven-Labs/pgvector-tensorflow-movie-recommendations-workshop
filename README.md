@@ -7,12 +7,13 @@
 Register at [https://go.aiven.io/get-pgvector](https://go.aiven.io/get-pgvector) to host your PostgreSQL service for free in the cloud and get additional 400$ credits for other services.
 
 Follow the registration steps:
-![readme-files/register-aiven.mp4](Registering Aiven account)
+
+https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/assets/4600541/7aba8284-b1c3-45d6-a792-dd8abda2378a
+
 
 ### Step 2. Set up GitPod
 
 Open [https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/](https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/) to create a workspace with the lab.
-![Opening GitPod](Todo.gif)
 
 ## Part 1. Core Functionality: Generating embeddings and finding the closest vectors
 
@@ -41,9 +42,11 @@ Documentation notes:
 
 To access PostgreSQL database from JavaScript code you need to do two things:
 1. Copy **.env-example** and rename to **.env**. Populate it with information from your service:
-[Todod add picture]
+<img width="1509" alt="Dotenv and pg connection" src="https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/assets/4600541/640e20ef-79fc-49f0-a228-477e5fa453b0">
+
 2. Download **ca.pem** and add it next to **.env**.
-[Todod add picture]
+<img width="1466" alt="Screenshot 2024-01-08 at 15 33 54" src="https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/assets/4600541/48fdb641-a354-4aea-a17d-2d60e66362f2">
+
 
 To enable vector in PostgreSQL we need to execute ``CREATE EXTENSION vector;``. To do so from this JavaScript project run
 
