@@ -7,7 +7,7 @@
 Register at [https://go.aiven.io/get-pgvector](https://go.aiven.io/get-pgvector) to host your PostgreSQL service for free in the cloud and get additional 400$ credits for other services.
 
 Follow the registration steps:
-![register-aiven.mp4](Registering Aiven account)
+![readme-files/register-aiven.mp4](Registering Aiven account)
 
 ### Step 2. Set up GitPod
 
