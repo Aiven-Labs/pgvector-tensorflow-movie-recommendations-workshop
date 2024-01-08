@@ -7,11 +7,11 @@
 Register at [https://go.aiven.io/get-pgvector](https://go.aiven.io/get-pgvector) to host your PostgreSQL service for free in the cloud and get additional 400$ credits for other services.
 
 Follow the registration steps:
-![Registration steps](Todo.gif)
+![register-aiven.mp4](Registering Aiven account)
 
 ### Step 2. Set up GitPod
 
-Follow [TODO](TODO) to open GitPod workplace with the lab.
+Open [https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/](https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/) to create a workspace with the lab.
 ![Opening GitPod](Todo.gif)
 
 ## Part 1. Core Functionality: Generating embeddings and finding the closest vectors
