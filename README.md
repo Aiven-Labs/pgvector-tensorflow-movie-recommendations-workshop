@@ -208,7 +208,7 @@ export default async function handler(
         res: NextApiResponse<Movie[]>
 ) {
    const model = await getTFModel();
-   const embeddings = await model?.embed(req.body.search);
+   const embeddings = await model?.embed("cat");
    const embeddingArray = embeddings?.arraySync()[0];
    const client = await getPGClient();
 
