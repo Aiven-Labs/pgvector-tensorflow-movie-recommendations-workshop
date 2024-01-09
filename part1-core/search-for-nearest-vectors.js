@@ -2,8 +2,10 @@ require('dotenv').config();
 const fs = require('fs');
 const pg = require('pg');
 require('@tensorflow/tfjs-node');
-const use = require('@tensorflow-models/universal-sentence-encoder');
+const encoder = require('@tensorflow-models/universal-sentence-encoder');
 
+// Connecting to cloud-based PostgreSQL using credentials and ca.pem
+// Configuration settings are taken from .env
 const config = {
     user: process.env.PG_NAME,
     password: process.env.PG_PASSWORD,
@@ -16,15 +18,18 @@ const config = {
     },
 };
 
-use.load().then(async model => {
-    const embeddings = await model.embed("a lot of cute puppies");
-    const embeddingArray = embeddings.arraySync()[0];
+encoder.load().then(async model => {
+    const testPhrase = "a lot of cute puppies";
+    const embeddingRequest = await model.embed(testPhrase);
+    const testPhraseVector = embeddingRequest.arraySync()[0];
 
+    // connecting to Postgres
     const client = new pg.Client(config);
     await client.connect();
     try {
+        // using PGVector extension to find 5 closest vectors from movie_plots in comparison to testPhraseVector
         const pgResponse = await client.query(
-            `SELECT * FROM movie_plots ORDER BY embedding <-> '${JSON.stringify(embeddingArray)}' LIMIT 5;`);
+            `SELECT * FROM movie_plots ORDER BY embedding <-> '${JSON.stringify(testPhraseVector)}' LIMIT 5;`);
         console.log(pgResponse.rows);
     } catch (err) {
         console.error(err);

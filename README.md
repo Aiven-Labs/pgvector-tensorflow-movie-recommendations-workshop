@@ -1,6 +1,6 @@
 # Building a movie recommendation system with Tensorflow and PGVector
 
-## Part 0. Prepare working environment
+## Part 1. Prepare working environment
 
 ### Step 1. Set up PG service with Aiven
 
@@ -15,7 +15,7 @@ https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop
 
 Open [https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/](https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/) to create a workspace with the lab.
 
-## Part 1. Core Functionality: Generating embeddings and finding the closest vectors
+## Part 2. Core Functionality: Generating embeddings and finding the closest vectors
 
 ### Step 1. Setup TensorFlow to create a single vector
 In this part we'll be working in folder **part1-core**. Navigate there:
@@ -83,7 +83,7 @@ Run with
 node search-for-nearest-vectors.js
 ```
 
-## Part 2. Visual Interface: Integrating into a full-stack web application
+## Part 3. Visual Interface: Integrating into a full-stack web application
 
 ### Step 1. Next.js project setup
 

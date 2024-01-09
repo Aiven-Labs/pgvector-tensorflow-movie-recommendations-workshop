@@ -1,12 +1,17 @@
+// Step 3. Process all movie plots, generate embeddings and store in the database
 require('dotenv').config();
 const fs = require('fs');
 require('@tensorflow/tfjs-node');
-const use = require('@tensorflow-models/universal-sentence-encoder');
+const encoder = require('@tensorflow-models/universal-sentence-encoder');
+// pg-promise allows inserting multiple rows
 const pgp = require('pg-promise')({
     capSQL: true // capitalize all generated SQL
 });
+// Processing all 35K values might take some time, for testing you can slice a small portion.
 const moviePlots = require("./movie-plots.json");//.slice(0, 500);
 
+// Connecting to cloud-based PostgreSQL using credentials and ca.pem
+// Configuration settings are taken from .env
 const config = {
     user: process.env.PG_NAME,
     password: process.env.PG_PASSWORD,
@@ -23,11 +28,14 @@ const db = pgp(config);
 
 const storeInPG = (moviePlots) => {
     // set of columns
-    const columns = new pgp.helpers.ColumnSet(['title', 'director', 'plot', 'year', 'wiki', 'cast', 'genre', 'embedding'], {table: 'movie_plots'});
+    const columns =
+        new pgp.helpers.ColumnSet(['title', 'director', 'plot', 'year', 'wiki', 'cast', 'genre', 'embedding'],
+            {table: 'movie_plots'});
 
-    const values = [];
+    // set or rows
+    const rows = [];
     for (let i = 0; i < moviePlots.length; i++) {
-        values.push({
+        rows.push({
             title: moviePlots[i]['Title'],
             director: moviePlots[i]['Director'],
             plot: moviePlots[i]['Plot'],
@@ -40,13 +48,14 @@ const storeInPG = (moviePlots) => {
     }
 
     // generating a multi-row insert query:
-    const query = pgp.helpers.insert(values, columns);
+    const query = pgp.helpers.insert(rows, columns);
 
     // executing the query:
     db.none(query).then();
 }
 
-use.load().then(async model => {
+// generating embeddings batch by batch and then sending to Postgres
+encoder.load().then(async model => {
     // Select batchSize depending on your machine's available resources.
     // When running on GitPod 150-200 is upper limit before TF starts bringing memory warnings
     const batchSize = 150;
@@ -56,9 +65,11 @@ use.load().then(async model => {
         const plotDescriptions = moviePlots.slice(start, end).map(moviePlot => moviePlot.Plot);
         const embeddings = await model.embed(plotDescriptions);
         const vectors = [...embeddings.arraySync()];
+        // adding received vector values to the array of movie plots
         for (let i = start; i < end; i++) {
             moviePlots[i]['embedding'] = vectors[i - start];
         }
+        // storing batch of data in PG
         storeInPG(moviePlots.slice(start, end));
     }
 });
