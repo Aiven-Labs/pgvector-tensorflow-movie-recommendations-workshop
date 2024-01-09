@@ -118,9 +118,7 @@ To start the development server run:
 npm run dev
 ```
 
-In GitPod you'll see a pop-up offering to open [todod]
-
-[todo add video]
+In GitPod you'll see a pop-up offering to open
 
 ### Step 2. Do nearest vectors retrieval through API route
 
@@ -136,10 +134,11 @@ npm install @tensorflow-models/universal-sentence-encoder && npm install @tensor
 
 We also need PostgreSQL credentials to access the database. Similar to how we did before:
 
-1. In the folder **movie-recommender** (your Nex.js project) create **.env**. Populate it with information from your service:
-   [Todod add picture]
+1. Copy **.env-example** and rename to **.env**. Populate it with information from your service:
+   <img width="1509" alt="Dotenv and pg connection" src="https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/assets/4600541/640e20ef-79fc-49f0-a228-477e5fa453b0">
+
 2. Download **ca.pem** and add it next to **.env**.
-   [Todod add picture]
+   <img width="1466" alt="Screenshot 2024-01-08 at 15 33 54" src="https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/assets/4600541/48fdb641-a354-4aea-a17d-2d60e66362f2">
 
 To create a new API route, create a new file **pages/api/recommendations.ts**.
 
