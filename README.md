@@ -318,8 +318,15 @@ export default function Home() {
 }
 ```
 
-The the API route **pages/api/recommendations** catch the value **req.body.search** that is sent from **pages/index.tsx**
+For the API route **pages/api/recommendations** we need to catch the value **req.body.search** that is sent from **pages/index.tsx**.
 
+In the file **recommendations.ts**, edit the `handler` function, and replace the line
+
+```ts
+   const embeddings = await model?.embed("cat");
+
+```
+with code to use the value from the request:
 ```ts
 const embeddings = await model.embed(req.body.search);
 ```
