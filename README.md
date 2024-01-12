@@ -328,7 +328,7 @@ In the file **recommendations.ts**, edit the `handler` function, and replace the
 ```
 with code to use the value from the request:
 ```ts
-   const embeddings = await model.embed(req.body.search);
+   const embeddings = await model?.embed(req.body.search);
 ```
 
 ### Step 4. Polishing and testing
