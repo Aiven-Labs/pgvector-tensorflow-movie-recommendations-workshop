@@ -25,7 +25,9 @@ cd part1-core
 The movie plot dataset is already included. To get more information check [https://www.kaggle.com/datasets/jrobischon/wikipedia-movie-plots](https://www.kaggle.com/datasets/jrobischon/wikipedia-movie-plots)
 
 Install the dependencies:
-```npm install```
+```
+npm install
+```
 
 Open **encode-single-movie-plot.js** to see how to encode a sungle movie plot using TensorFlow library and its sentence encoder model.
 
@@ -48,7 +50,7 @@ To access PostgreSQL database from JavaScript code you need to do two things:
 <img width="1466" alt="Screenshot 2024-01-08 at 15 33 54" src="https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/assets/4600541/48fdb641-a354-4aea-a17d-2d60e66362f2">
 
 
-To enable vector in PostgreSQL we need to execute ``CREATE EXTENSION vector;``. To do so from this JavaScript project run
+To enable pgvector support in PostgreSQL we need to execute ``CREATE EXTENSION vector;``. To do so from this JavaScript project run
 
 ```
 node pg-commands.js enablePGVector
@@ -118,7 +120,7 @@ To start the development server run:
 npm run dev
 ```
 
-In GitPod you'll see a pop-up offering to open
+In GitPod you'll see a pop-up offering to open a browser window.
 
 ### Step 2. Do nearest vectors retrieval through API route
 
@@ -132,13 +134,15 @@ We will create a similar API route. As with the terminal-based project we'll be 
 npm install @tensorflow-models/universal-sentence-encoder && npm install @tensorflow/tfjs-node && npm install pg && npm install dotenv
 ```
 
-We also need PostgreSQL credentials to access the database. Similar to how we did before:
+We also need PostgreSQL credentials to access the database. Since these are the same as the ones we setup in [the previous section](#step-2-create-postgres--database-table-and-enable-pgvector), we can just copy the files:
 
-1. Copy **.env-example** and rename to **.env**. Populate it with information from your service:
-   <img width="1509" alt="Dotenv and pg connection" src="https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/assets/4600541/640e20ef-79fc-49f0-a228-477e5fa453b0">
+```
+cp ../../part1-core/.env .
+```
 
-2. Download **ca.pem** and add it next to **.env**.
-   <img width="1466" alt="Screenshot 2024-01-08 at 15 33 54" src="https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/assets/4600541/48fdb641-a354-4aea-a17d-2d60e66362f2">
+```
+cp ../../part1-core/ca.pem .
+```
 
 To create a new API route, create a new file **pages/api/recommendations.ts**.
 
@@ -322,11 +326,11 @@ const embeddings = await model.embed(req.body.search);
 
 ### Step 4. Polishing and testing
 
-Let's add the following elements:
+Let's edit **pages/index.tsx** to add the following elements:
 1. Indicator for in progress state.
 2. Colors and layouts
 
-You can take the inspiration (or simply copy ;) ) the code:
+You can take inspiration from below, or simply replace the contents of **pages/index.tsx** ;)
 
 ```tsx
 import {useRef, useState} from 'react';
