@@ -4,7 +4,7 @@
 
 ### Step 1. Set up PG service with Aiven
 
-Register at [https://go.aiven.io/get-pgvector](https://go.aiven.io/get-pgvector) to host your PostgreSQL service for free in the cloud and get additional 400$ credits for other services.
+Register at [[https://go.aiven.io/get-pgvector](https://go.aiven.io/signup-movie-workshop)](https://go.aiven.io/signup-movie-workshop) to host your PostgreSQL service for free in the cloud and get additional 400$ credits for other services.
 
 Follow the registration steps:
 
