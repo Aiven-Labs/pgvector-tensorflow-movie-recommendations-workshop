@@ -18,6 +18,7 @@ and choose `Create codespace on main`. This will start up a new Codespaces
 environment.
 
 Or just press the button: 
+
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](
 https://github.com/codespaces/new/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop)
 
