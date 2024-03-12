@@ -13,14 +13,15 @@ https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop
 
 ### Step 2. Set up Codespaces
 
-On the GitHub page, select the `<> Code` button, choose the `Codespaces` tab
-and choose `Create codespace on main`. This will start up a new Codespaces
-environment.
-
-Or just press the button: 
+Press the button to open this repository in GitHub Codespaces: 
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](
 https://github.com/codespaces/new/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop)
+
+Or, if you prefer to do it manually: at the top of this GitHub page, above the
+file browser, select the `<> Code` button, choose the `Codespaces` tab
+and choose `Create codespace on main`. This will start up a new Codespaces
+environment.
 
 <!-- The old gitpod link [https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/](https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/) to create a workspace with the lab.
 -->
@@ -74,7 +75,7 @@ node pg-commands.js createTable
 
 Check other commands as well as connection configuration in **pg-commands.js**
 
-### Step 6. Process all movies, generate vector embeddings and store in PG
+### Step 3. Process all movies, generate vector embeddings and store in PG
 
 Open **process-all-movies.js**. It contains logic to iterate through movie plots, generate embeddings and store data in PostgreSQL.
 
@@ -86,7 +87,7 @@ node process-all-movies.js
 
 It will take 5-10 minutes to process all records.
 
-### Step 7. Search for nearest vectors
+### Step 4. Search for nearest vectors
 
 Open **search-for-nearest-vectors.js** to see an example of vector search using PGVector and generated embeddings.
 
