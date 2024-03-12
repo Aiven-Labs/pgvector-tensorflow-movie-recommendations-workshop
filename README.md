@@ -4,16 +4,25 @@
 
 ### Step 1. Set up PG service with Aiven
 
-Register at [https://go.aiven.io/signup-movie-workshop](https://go.aiven.io/signup-movie-workshop) to host your PostgreSQL service for free in the cloud and get additional 400$ credits for other services.
+Register at [https://go.aiven.io/signup-movie-workshop](https://go.aiven.io/signup-movie-workshop) to host your PostgreSQL service for free in the cloud and get $400 credits for other services.
 
 Follow the registration steps:
 
 https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/assets/4600541/7aba8284-b1c3-45d6-a792-dd8abda2378a
 
 
-### Step 2. Set up GitPod
+### Step 2. Set up Codespaces
 
-Open [https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/](https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/) to create a workspace with the lab.
+On the GitHub page, select the `<> Code` button, choose the `Codespaces` tab
+and choose `Create codespace on main`. This will start up a new Codespaces
+environment.
+
+Or just press the button: 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](
+https://github.com/codespaces/new/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop)
+
+<!-- The old gitpod link [https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/](https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/) to create a workspace with the lab.
+-->
 
 ## Part 2. Core Functionality: Generating embeddings and finding the closest vectors
 
@@ -113,7 +122,9 @@ Select following parameters:
 You can find more in [https://nextjs.org/](https://nextjs.org/)
 
 To start the Next.js project first navigate to the folder where it was installed (**movie-recommender** if you followed parameters from above) 
-```cd movie-recommender```
+```
+cd movie-recommender
+```
 
 To start the development server run:
 ```
