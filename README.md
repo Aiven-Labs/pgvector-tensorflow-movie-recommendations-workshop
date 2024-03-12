@@ -4,16 +4,27 @@
 
 ### Step 1. Set up PG service with Aiven
 
-Register at [https://go.aiven.io/signup-movie-workshop](https://go.aiven.io/signup-movie-workshop) to host your PostgreSQL service for free in the cloud and get additional 400$ credits for other services.
+Register at [https://go.aiven.io/signup-movie-workshop](https://go.aiven.io/signup-movie-workshop) to host your PostgreSQL service for free in the cloud and get $400 credits for other services.
 
 Follow the registration steps:
 
 https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/assets/4600541/7aba8284-b1c3-45d6-a792-dd8abda2378a
 
 
-### Step 2. Set up GitPod
+### Step 2. Set up Codespaces
 
-Open [https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/](https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/) to create a workspace with the lab.
+Press the button to open this repository in GitHub Codespaces: 
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](
+https://github.com/codespaces/new/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop)
+
+Or, if you prefer to do it manually: at the top of this GitHub page, above the
+file browser, select the `<> Code` button, choose the `Codespaces` tab
+and choose `Create codespace on main`. This will start up a new Codespaces
+environment.
+
+<!-- The old gitpod link [https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/](https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/) to create a workspace with the lab.
+-->
 
 ## Part 2. Core Functionality: Generating embeddings and finding the closest vectors
 
@@ -64,7 +75,7 @@ node pg-commands.js createTable
 
 Check other commands as well as connection configuration in **pg-commands.js**
 
-### Step 6. Process all movies, generate vector embeddings and store in PG
+### Step 3. Process all movies, generate vector embeddings and store in PG
 
 Open **process-all-movies.js**. It contains logic to iterate through movie plots, generate embeddings and store data in PostgreSQL.
 
@@ -76,7 +87,7 @@ node process-all-movies.js
 
 It will take 5-10 minutes to process all records.
 
-### Step 7. Search for nearest vectors
+### Step 4. Search for nearest vectors
 
 Open **search-for-nearest-vectors.js** to see an example of vector search using PGVector and generated embeddings.
 
@@ -113,7 +124,9 @@ Select following parameters:
 You can find more in [https://nextjs.org/](https://nextjs.org/)
 
 To start the Next.js project first navigate to the folder where it was installed (**movie-recommender** if you followed parameters from above) 
-```cd movie-recommender```
+```
+cd movie-recommender
+```
 
 To start the development server run:
 ```
