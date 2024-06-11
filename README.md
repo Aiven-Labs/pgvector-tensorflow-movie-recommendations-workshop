@@ -40,7 +40,7 @@ Install the dependencies:
 npm install
 ```
 
-Open **encode-single-movie-plot.js** to see how to encode a sungle movie plot using TensorFlow library and its sentence encoder model.
+Open **encode-single-movie-plot.js** to see how to encode a single movie plot using TensorFlow library and its sentence encoder model.
 
 Run to see the result:
 
