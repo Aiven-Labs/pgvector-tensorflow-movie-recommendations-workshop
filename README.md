@@ -23,6 +23,9 @@ file browser, select the `<> Code` button, choose the `Codespaces` tab
 and choose `Create codespace on main`. This will start up a new Codespaces
 environment.
 
+> [!NOTE]
+> This workshop's requirements are approximately 4-6 usage hours and 0.09 GB storage, which _should_ stay within the [free plan limits](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces#monthly-included-storage-and-core-hours-for-personal-accounts).
+
 <!-- The old gitpod link [https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/](https://gitpod.io/#https://github.com/Aiven-Labs/pgvector-tensorflow-movie-recommendations-workshop/) to create a workspace with the lab.
 -->
 
