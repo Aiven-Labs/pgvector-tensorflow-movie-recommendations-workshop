@@ -331,18 +331,21 @@ export default function Home() {
 }
 ```
 
-For the API route **pages/api/recommendations** we need to catch the value **req.body.search** that is sent from **pages/index.tsx**.
+If you now go in your browser to **[your domain]** you should see a search query. However, if you enter some text and click "Search", you'll still get the answer for "cats", because that is still hardcoded into the query handler.
 
-In the file **recommendations.ts**, edit the `handler` function, and replace the line
+To fix that, we need to edit the route handler in **pages/api/recommendations.ts** to catch the value **req.body.search** that is sent from **pages/index.tsx**.
+
+In the file **pages/api/recommendations.ts**, edit the `handler` function, and replace the line
 
 ```ts
    const embeddings = await model?.embed("cat");
-
 ```
 with code to use the value from the request:
 ```ts
    const embeddings = await model?.embed(req.body.search);
 ```
+
+*Now* when you type a query into the search box at **[your domain]** and search for it, you should get the answer for your own query.
 
 ### Step 4. Polishing and testing
 
