@@ -174,7 +174,7 @@ Connect to PostgreSQL:
 
 ```ts
 const config = {
-    user: process.env.PG_NAME,
+    user: process.env.PG_USER,
     password: process.env.PG_PASSWORD,
     host: process.env.PG_HOST,
     port: process.env.PG_PORT,

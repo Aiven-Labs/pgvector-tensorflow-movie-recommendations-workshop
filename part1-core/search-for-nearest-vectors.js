@@ -7,7 +7,7 @@ const encoder = require('@tensorflow-models/universal-sentence-encoder');
 // Connecting to cloud-based PostgreSQL using credentials and ca.pem
 // Configuration settings are taken from .env
 const config = {
-    user: process.env.PG_NAME,
+    user: process.env.PG_USER,
     password: process.env.PG_PASSWORD,
     host: process.env.PG_HOST,
     port: process.env.PG_PORT,
