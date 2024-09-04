@@ -45,7 +45,7 @@ Open **encode-single-movie-plot.js** to see how to encode a single movie plot us
 Run to see the result:
 
 ```
-    node encode-single-movie-plot.js
+node encode-single-movie-plot.js
 ```
 
 Documentation notes:
@@ -133,7 +133,7 @@ To start the development server run:
 npm run dev
 ```
 
-In GitPod you'll see a pop-up offering to open a browser window.
+In Codespaces you'll see a pop-up offering to open a browser window.
 
 ### Step 2. Do nearest vectors retrieval through API route
 
@@ -193,6 +193,7 @@ Add handler with test values for the search string (we'll connect it to user int
 let globalPGClient: pg.Client | null = null;
 
 let globalTFModel: UniversalSentenceEncoder | null  = null;
+
 async function getTFModel() {
    // If the model already exists, return it
    if (globalTFModel) {
@@ -218,7 +219,6 @@ async function getPGClient() {
 
    return client;
 }
-
 
 export default async function handler(
         req: NextApiRequest,
